@@ -1,22 +1,156 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
+.App{
+  margin-top:5px;
+  display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows:repeat(auto-fit, minmax(100px, 1fr));
+  grid-row-gap: 5px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #ffffff;
+  min-height: 5vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(76, 124, 120);
 }
 
-.App-link {
-  color: #09d3ac;
+.header-icons i
+{
+  margin:auto 10px;
+}
+.wallpaper
+{
+  margin-left:5px;
+  grid-column-start: 3;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.calendar
+{
+  margin-left:5px;
+  grid-column-start: 9;
+  grid-column-end: 12;
+  grid-row-start: 3;
+  grid-row-end: 5;
+
+}
+.wallpaper .image
+{
+  height: 25vh;
+  margin:0px;
+  background-image: url('./assets/wallpaper.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.wallpaper .text
+{
+  border-radius: 0px;
+  max-height:10vh;
+  background-color: white;
+  padding:0px 30px;
+}
+
+.wallpaper .text img
+{
+  width:130px;
+  height:150px;
+  position: relative;
+  bottom:100px;
+  background-color: white;
+  border:3px solid white;
+}
+.wallpaper .text .list
+{
+  list-style: none;
+  height: 100%;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-evenly;
+  
+}
+.wallpaper .text .list li
+{
+  margin:1em auto;
+  padding:0em 4em;
+  border-right:2px solid black;
+}
+.wallpaper .text .list li span
+{
+  margin: 0px;
+  font-size: 0.8em;
+}
+.wallpaper .text .list li h6
+{
+  margin:0px;
+  color: rgba(0,0,0,0.8);
+  font-weight: 700;
+}
+.wallpaper .text .list li:last-child
+{
+  border-right:0px solid rgb(255, 255, 255);
+}
+.react-calendar
+{
+  min-width:470px !important;
+  margin-right:0px !important;
+  font-family: 'Oxygen' !important;
+}
+.react-calendar__tile--active {
+  background: #ff0000;
+  color: white;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #ffa310;
+}
+.sc-header
+{
+  background-color: #6f7cee !important;
+  font-family: 'Oxygen';
+}
+.sc-message
+{
+  font-family: 'Oxygen';
+}
+
+.timeline
+{
+  background-color: white;
+  grid-column-start: 3;
+  grid-column-end: 9;
+  padding:20px 25px;
+  margin-left:5px;
+  grid-row-start: 3;
+  grid-row-end: 9;
+}
+.timetable .time div
+{
+  border-right: 2px solid black
+}
+.timetable .course
+{
+  align-items: center;
+}
+.timetable .course h6
+{
+  font-weight: 700
+}
+.timetable .course p
+{
+  font-size: 0.8em;
+  align-self: center
+}
+
+.comingAssigns
+{
+  margin-left:5px;
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 5;
+  grid-row-end: 8;
+  background-color: white;
+  padding:20px;
 }
