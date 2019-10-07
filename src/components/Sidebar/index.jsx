@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import "./sidebar.css";
-String.prototype.capitalize = function() {
-  return this.charAt(0).toUpperCase() + this.slice(1);
-}
 export default class Sidebar extends Component{
   constructor(props)
   {
-    super(props);
+    super(props);   
     this.state={
       student:[{
         id:0,
@@ -25,7 +22,7 @@ export default class Sidebar extends Component{
         id:2,
         link:'exams',
         icon:'pencil-square-o',
-        not:''
+        not:'1'
       },
       {
         id:3,
@@ -70,18 +67,19 @@ export default class Sidebar extends Component{
       }]
     }
   }
+  capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
   render()
   { const user = this.state.student;
-    console.log(this.props.location)
+    const loc = window.location.pathname;
     return (
     <div className="sidebar text-left">
       <h5 className="text-center">Navigation</h5>
       <ul className="nav-list">
        {
-         user.map((list)=>{return  <li className="list-item">
+         user.map((list)=>{return  <li className={loc.slice(1)===list.link?"list-item active":"list-item"}>
           <Link to={`/${list.link}`}>
             <span>
-              <i className={`fa fa-${list.icon}`}></i><h6>{list.link.capitalize()}</h6>
+              <i className={`fa fa-${list.icon}`}></i><h6>{this.capitalize(list.link)}</h6>
             </span>
             <span className={list.not===''?null:"list-span"}>{list.not}</span>
           </Link>

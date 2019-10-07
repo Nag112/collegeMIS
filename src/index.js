@@ -8,9 +8,9 @@ import Login from './components/Login'
 ReactDOM.render(
   <Router>
     <Switch>      
-      <Route exact path="/login" component={Login}/>
-      <Route exact path="/" component={App} />
-      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/" component={Login}/>
+      <Route exact path="/timeline" component={App} />
+      <Route exact path="/profile" component={Profile}/>
       <Redirect from="*" to={Login}/>
     </Switch>
   </Router>,
