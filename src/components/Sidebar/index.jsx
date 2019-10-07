@@ -7,7 +7,12 @@ export default function(props) {
       <ul className="nav-list">
         <li className="list-item">
           <span>
-            <i className="fa fa-user"></i>Time line
+            <i className="fa fa-list-alt"></i>Time line
+          </span>         
+        </li>
+        <li className="list-item">
+          <span>
+            <i className="fa fa-user-o"></i>Profile
           </span>         
         </li>
         <li className="list-item">

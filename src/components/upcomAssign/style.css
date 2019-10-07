@@ -1,0 +1,10 @@
+.comingAssigns
+{
+  margin-left:5px;
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 5;
+  grid-row-end: 8;
+  background-color: white;
+  padding:20px;
+}

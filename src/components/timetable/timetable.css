@@ -1,0 +1,27 @@
+.timeline
+{
+  background-color: white;
+  grid-column-start: 3;
+  grid-column-end: 9;
+  padding:20px 25px;
+  margin-left:5px;
+  grid-row-start: 3;
+  grid-row-end: 9;
+}
+.timetable .time div
+{
+  border-right: 2px solid black
+}
+.timetable .course
+{
+  align-items: center;
+}
+.timetable .course h6
+{
+  font-weight: 700
+}
+.timetable .course p
+{
+  font-size: 0.8em;
+  align-self: center
+}
