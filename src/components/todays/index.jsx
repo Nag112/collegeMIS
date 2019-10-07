@@ -5,7 +5,7 @@ export default class Special extends Component
     render()
     {
         return <div className="special">
-           <h5>Today's specials</h5>
+           <h5>Today's Tasks</h5>
         <hr/>
         <div className="timetable row">
           <div className="col-3">
