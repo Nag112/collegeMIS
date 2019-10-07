@@ -49,49 +49,49 @@ export default class Timetable extends Component
                 <h6>Advanced OS</h6>
                 <p>Class N4</p>
               </div>
-              <p>Damodar</p>
+              <p>Dr.Damodar Reddy</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
                 <h6>Advanced OS</h6>
                 <p>Class N4</p>
               </div>
-              <p>Damodar</p>
+              <p>Dr.Damodar Reddy</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
                 <h6>Advanced OS</h6>
                 <p>Class N4</p>
               </div>
-              <p>Damodar</p>
+              <p>Dr.Damodar Reddy</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
                 <h6>Advanced OS</h6>
                 <p>Class N4</p>
               </div>
-              <p>Damodar</p>
+              <p>Dr.Damodar Reddy</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
                 <h6>Advanced OS</h6>
                 <p>Class N4</p>
               </div>
-              <p>Damodar</p>
+              <p>Dr.Damodar Reddy</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
                 <h6>Advanced OS</h6>
                 <p>Class N4</p>
               </div>
-              <p>Damodar</p>
+              <p>Dr.Damodar Reddy</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
                 <h6>Advanced OS</h6>
                 <p>Class N4</p>
               </div>
-              <p>Damodar</p>
+              <p>Dr.Damodar Reddy</p>
             </div>
           </div>
         </div>

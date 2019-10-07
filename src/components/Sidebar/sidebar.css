@@ -1,6 +1,6 @@
 .sidebar
 {
-    max-width: 18vw;
+    margin-right:5px;
     min-height:95vh;
     background-color: white;
     grid-column-start: 1;

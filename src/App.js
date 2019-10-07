@@ -4,6 +4,7 @@ import Calendar from "react-calendar";
 import Timetable from './components/timetable'
 import UpcomAssign from './components/upcomAssign'
 import Messenger from './components/messenger'
+import Special from './components/todays'
 import "./App.css";
 import Header from './components/header'
 import Wallpaper from './components/wallpaper'
@@ -36,6 +37,7 @@ export default class App extends React.Component {
           <Calendar className="calendar" onChange={this.onChange} value={this.state.date}/>
          <Timetable/>
          <UpcomAssign/>
+         <Special/>
          </div>
         <Messenger/>
       </Fragment>

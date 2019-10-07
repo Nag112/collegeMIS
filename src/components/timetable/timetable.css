@@ -4,9 +4,8 @@
   grid-column-start: 3;
   grid-column-end: 9;
   padding:20px 25px;
-  margin-left:5px;
   grid-row-start: 3;
-  grid-row-end: 9;
+  grid-row-end: 10;
 }
 .timetable .time div
 {

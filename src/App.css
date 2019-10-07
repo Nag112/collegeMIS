@@ -3,8 +3,10 @@
 .App{
   margin-top:5px;
   display: grid;
-  grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
-  grid-template-rows:repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns:auto;
+  grid-template-rows:auto;
+  grid-auto-columns: 8.33333333%;
+  grid-auto-rows: 8.33333333%;
   grid-row-gap: 5px;
 }
 
@@ -14,7 +16,7 @@
   grid-column-start: 9;
   grid-column-end: 12;
   grid-row-start: 3;
-  grid-row-end: 5;
+  grid-row-end: 7;
 
 }
 .react-calendar
