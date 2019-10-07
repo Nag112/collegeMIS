@@ -29,19 +29,17 @@ class Login extends Component {
        {
          if(res.data===null||res.data===undefined)
           {
-            this.setState({error:"*Userid/Password is incorrect"});
+            this.setState({error:"* Userid/Password is incorrect"});
            }
          else
-           {                         
-            
+           {                                     
             if(res.data.designation===undefined||res.data.designation===null)
             {
-              this.setState({error:"*Userid/Password is incorrect"});
+              this.setState({error:"* Userid/Password is incorrect"});
             }
             else
-            {localStorage.clear();
+            {
             localStorage.setItem('auth-token',res.data.token);
-            localStorage.setItem('userName',res.data.name);
             localStorage.setItem('uid',res.data.uid);
             this.props.history.push('/')
             }

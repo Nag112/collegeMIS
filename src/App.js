@@ -6,8 +6,7 @@ import UpcomAssign from './components/upcomAssign'
 import Messenger from './components/messenger'
 import "./App.css";
 import Header from './components/header'
-import Login from './components/Login'
-import Profile from './components/profile'
+import Wallpaper from './components/wallpaper'
 export default class App extends React.Component {
   constructor(props)
   {
@@ -33,7 +32,7 @@ export default class App extends React.Component {
         <Header/>
         <div className="App">
           <Sidebar />
-          <Profile/>
+          <Wallpaper/>
           <Calendar className="calendar" onChange={this.onChange} value={this.state.date}/>
          <Timetable/>
          <UpcomAssign/>

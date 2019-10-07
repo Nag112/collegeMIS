@@ -1,5 +1,6 @@
 .sidebar
 {
+    max-width: 18vw;
     min-height:95vh;
     background-color: white;
     grid-column-start: 1;
@@ -18,7 +19,7 @@
     list-style: none;
     padding:0px 25px;
 }
-.nav-list .list-item
+.nav-list .list-item a
 {
     color:rgba(0,0,0,0.7);
     padding:10px 5px;
@@ -27,26 +28,32 @@
     justify-content: space-between;
     border-bottom:2px solid black;
 }
-
-.nav-list .list-item i
+.nav-list span h6
 {
-    color:black;
+    color:rgba(0,0,0,0.7);
+    display: inline;
+    font-weight: 700;
+}
+.nav-list .list-item .fa
+{
     margin-right:10px;
 }
 .nav-list .list-item .list-span
 {
     background-color: rgb(255, 0, 0);
-    color:white;    
+    color:white;   
+    padding:0px 5px; 
     font-weight: 900;
 }
-.nav-list .list-item:active,.nav-list .list-item:active .list-span,.nav-list .list-item:active i
+.nav-list .list-item.active,.nav-list .list-item.active span,.nav-list .list-item.active i
 {
     color:rgba(255, 255, 255, 1);
-    background-color: blueviolet;
+    background-color: rgb(71, 68, 75);
 }
-.nav-list .list-item:hover,.nav-list .list-item:hover .list-span,.nav-list .list-item:hover i
+.nav-list .list-item:hover,.nav-list .list-item:hover i,.nav-list .list-item:hover span
 {
     color:rgba(255, 255, 255, 1);
     background-color: rgb(122, 110, 133);
     cursor: pointer;
+    text-decoration: none;
 }
