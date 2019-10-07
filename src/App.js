@@ -6,15 +6,29 @@ import UpcomAssign from './components/upcomAssign'
 import Messenger from './components/messenger'
 import "./App.css";
 import Header from './components/header'
-
+import Login from './components/Login'
 import Profile from './components/profile'
 export default class App extends React.Component {
+  constructor(props)
+  {
+    super(props);
+    if(!localStorage.getItem('auth-token'))
+    {
+      this.props.history.push('/login')
+    }
+  }
   state = {
-    date: new Date()
+    date: new Date(),
+    login:false
   };
+  login=()=>
+  {
+    this.setState({login:true},console.log(this.state.login))
+  }
   onChange = date => this.setState({ date });
+
   render() {
-    return (
+    return (   
       <Fragment>
         <Header/>
         <div className="App">
