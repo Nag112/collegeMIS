@@ -1,6 +1,6 @@
 .sidebar
 {    
-    height:100% !important;
+    min-height:100% !important;
     background-color: white;
 }
 .sidebar h5

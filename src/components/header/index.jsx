@@ -11,7 +11,7 @@ import CheckBoxOutlineIcon from '@material-ui/icons/CheckBoxOutlined';
 import AccountCircle from '@material-ui/icons/AccountCircleOutlined';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import ScrollTop from '../ScrollTop'
+
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -173,7 +173,7 @@ export default function PrimarySearchAppBar(props) {
         {renderMobileMenu}
         {renderMenu}
       </div>
-      <ScrollTop/>         
+              
         
     </Fragment>
   );

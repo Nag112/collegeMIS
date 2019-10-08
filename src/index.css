@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(208, 255, 247);
-  
+  overflow-Y: scroll;
 }
 
 ::-webkit-scrollbar {
@@ -45,4 +45,12 @@ a,a:hover
   position: fixed;
   left:25px;
   bottom:10px;
+}
+.invisible
+{
+  display: none;
+}
+.visible
+{
+  display: inline-block;
 }
