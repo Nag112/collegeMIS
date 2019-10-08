@@ -104,7 +104,7 @@ export default function PrimarySearchAppBar(props) {
             <CheckBoxOutlineIcon />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>To-do</p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="rgb(76, 124, 120)">
@@ -123,7 +123,7 @@ export default function PrimarySearchAppBar(props) {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p>Logout</p>
       </MenuItem>
     </Menu>
   );

@@ -11,7 +11,7 @@ ReactDOM.render(
       <Route exact path="/" component={Login}/>
       <Route exact path="/timeline" component={App} />
       <Route exact path="/profile" component={Profile}/>
-      <Redirect from="*" to={Login}/>
+      <Redirect from="*" to='/timeline'/>
     </Switch>
   </Router>,
   document.getElementById("root")

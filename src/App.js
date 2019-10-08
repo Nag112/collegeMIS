@@ -14,7 +14,7 @@ export default class App extends React.Component {
     super(props);
     if(!localStorage.getItem('auth-token'))
     {
-      this.props.history.push('/login')
+     // this.props.history.push('/login')
     }
   }
   state = {
