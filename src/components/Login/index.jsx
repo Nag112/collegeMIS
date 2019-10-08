@@ -7,7 +7,7 @@ class Login extends Component {
     {
         super(props);
         this.state={          
-                userid:'',
+                userid:'123456789',
                 password:'' ,
                 error:'',
                 user:false,               
@@ -20,39 +20,40 @@ class Login extends Component {
     verifyUser = (e)=>
     {
         e.preventDefault(); 
-        localStorage.setItem('userId',this.state.userid);
-       if(this.state.userid!==''&&this.state.password!=='')
-       {
-           axios.post('https://misback.herokuapp.com/verifyuser/',
-           {userid:`${this.state.userid}`,password:`${this.state.password}`})
-       .then((res)=>
-       {
-         if(res.data===null||res.data===undefined)
-          {
-            this.setState({error:"* Userid/Password is incorrect"});
-           }
-         else
-           {                                     
-            if(res.data.designation===undefined||res.data.designation===null)
-            {
-              this.setState({error:"* Userid/Password is incorrect"});
-            }
-            else
-            {
-            localStorage.setItem('auth-token',res.data.token);
-            localStorage.setItem('uid',res.data.uid);
-            this.props.history.push('/timeline')
-            }
-           }
-        }
+        this.props.history.push('/timeline');        
+         localStorage.setItem('auth-token','123456798dhajskhdkjashdjahsdk');
+      //  if(this.state.userid!==''&&this.state.password!=='')
+      //  {
+      //      axios.post('https://misback.herokuapp.com/verifyuser/',
+      //      {userid:`${this.state.userid}`,password:`${this.state.password}`})
+      //  .then((res)=>
+      //  {
+      //    if(res.data===null||res.data===undefined)
+      //     {
+      //       this.setState({error:"* Userid/Password is incorrect"});
+      //      }
+      //    else
+      //      {                                     
+      //       if(res.data.designation===undefined||res.data.designation===null)
+      //       {
+      //         this.setState({error:"* Userid/Password is incorrect"});
+      //       }
+      //       else
+      //       {
+      //       localStorage.setItem('auth-token',res.data.token);
+      //       localStorage.setItem('uid',res.data.uid);
+      //       this.props.history.push('/timeline')
+      //       }
+      //      }
+      //   }
       
-      )
-       .catch(err =>{this.setState({error:'caught error'});console.log(err);});
-      }
+      // )
+      //  .catch(err =>{this.setState({error:'caught error'});console.log(err);});
+      // }
     
-      else{
-        this.setState({error:"*Please fill the required details"});
-      }
+      // else{
+      //   this.setState({error:"*Please fill the required details"});
+      // }
     }
   render() {
     return (<div className="limiter">

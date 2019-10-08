@@ -3,7 +3,7 @@
 body {
   font-family: "Oxygen",'Carrois Gothic SC',-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(208, 255, 247)
@@ -33,4 +33,11 @@ a,a:hover
 {
   text-decoration: none;
   color:inherit;
+}
+
+.scroll
+{
+  position: fixed;
+  left:25px;
+  bottom:10px;
 }
