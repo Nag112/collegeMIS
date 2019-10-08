@@ -1,0 +1,47 @@
+.table-caption
+{
+  margin:1em 2em;
+  text-decoration: underline;
+}
+.attendanceGrid .d-flex
+{
+    background-color: white;
+}
+.attendance .d-flex h2,.attendance .d-flex h2 .fa
+{
+    text-decoration: underline;
+    font-size: 1.2em;
+    font-weight: 700;
+    vertical-align: middle;
+    color:black;
+    margin:1em auto;
+    background-color: white;
+}
+.attendance_grid
+{
+    display: grid;
+    background-color: white;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-column-gap: 10px;
+}
+.attendance_grid .row .col-6
+{
+    margin-top:5px !important;
+    background-color: white !important;
+}
+.attendance_grid h6
+{
+    padding:15px 45px;
+    text-align: center;
+}
+.attendance_grid h6.heading
+{
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.holiday
+{
+    font-weight: 900;
+    color:red;
+    font-size: 1.2em;
+}
