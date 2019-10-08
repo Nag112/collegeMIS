@@ -34,7 +34,7 @@ handleScroll=e=>
   render() {
     return (
       <div className="App" onScroll={this.handleScroll}>
-        <Header />
+        <Header {...props}/>
         <Grid container direction="row" >
           <Grid item xs> 
           <Sidebar />

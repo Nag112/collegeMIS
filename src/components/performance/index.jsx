@@ -84,7 +84,7 @@ export default class Performance extends React.Component
     {
         return(
             <div className="performance">
-             <Header/>
+             <Header {...props}/>
         <Grid container spacing={1}>
           <Grid item xs={2}>  <Sidebar/></Grid>
               <Grid item xs={10} className="perGrid">

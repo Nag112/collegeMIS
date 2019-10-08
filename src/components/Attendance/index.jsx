@@ -297,7 +297,7 @@ export default class Attendance extends React.Component {
       <div></div>
     ) : (
         <div className="attendance">
-        <Header/>
+        <Header {...props}/>
         <Grid container spacing={1}>
           <Grid item xs={2}>  <Sidebar/></Grid>
               <Grid item xs={10} className="attendanceGrid">
