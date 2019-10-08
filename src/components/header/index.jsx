@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   title: {
     display: 'none',
     color:' rgb(76, 124, 120)',
-    fontFamily:'Oxygen',
+    fontFamily:'Playfair Display',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
