@@ -2,17 +2,17 @@ import React, { Component, Fragment } from "react";
 import Header from "../header";
 import Sidebar from "../Sidebar";
 import Wallpaper from "../wallpaper";
-import { Grid, Paper, Tabs, Tab,makeStyles } from "@material-ui/core";
+import { Grid, Paper, Tabs, Tab ,Box} from "@material-ui/core";
+import VerTabs from '../verTabs'
 
 export default class Profile extends Component {
   state = {
-    tab: 1
+    tab: 0
   };
   handleChange = (e, newValue) => {
     this.setState({ tab: newValue });
   };
   render() {
-    
     return (
       <Fragment>
         <Header />
@@ -24,15 +24,23 @@ export default class Profile extends Component {
             <Grid item xs={10}>
               <Wallpaper />
               <Grid container>
-               <Grid item xs={12}>
-                    <Paper variant="fullWidth">
-                      <Tabs value={this.state.tab} indicatorColor="primary" textColor="primary" onChange={this.handleChange} aria-label="profile" centered>
-                        <Tab label="Personal" />
-                        <Tab label="contact" />
-                        <Tab label="education" />
-                      </Tabs>
-                    </Paper>
-               </Grid>
+                <Grid item xs={12}>
+                  <Paper style={{borderRadius:0,borderBottom:'1px solid gray',marginLeft:'5px'}}>
+                    <Tabs
+                      value={this.state.tab}
+                      indicatorColor="primary"
+                      textColor="primary"
+                      onChange={this.handleChange}
+                      aria-label="profile"
+                      centered
+                    >
+                      <Tab label="Personal" />
+                      <Tab label="contact" />
+                      <Tab label="education" />                                           
+                    </Tabs>                    
+                  </Paper>
+                  <VerTabs value={this.state.tab}/>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

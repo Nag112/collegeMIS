@@ -25,10 +25,10 @@ export default class App extends React.Component {
   onChange = date => this.setState({ date });
 handleScroll=e=>
 {
-  console.log("NagC")
+  //console.log("NagC")
   if(e.target.scrollHeight>10)
   {
-    console.log("NagC")
+    //console.log("NagC")
   }
 }
   render() {
