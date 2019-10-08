@@ -14,7 +14,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     if (!localStorage.getItem('auth-token')) {
-       this.props.history.push('/login')
+      // this.props.history.push('/login')
     }
   }
   state = {
@@ -34,7 +34,7 @@ handleScroll=e=>
   render() {
     return (
       <div className="App" onScroll={this.handleScroll}>
-        <Header {...props}/>
+        <Header {...this.props}/>
         <Grid container direction="row" >
           <Grid item xs> 
           <Sidebar />

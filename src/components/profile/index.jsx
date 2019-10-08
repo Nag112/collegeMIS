@@ -15,7 +15,7 @@ export default class Profile extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
+        <Header {...this.props}/>
         <div className="App">
           <Grid container direction="row" alignItems="stretch">
             <Grid item xs>
