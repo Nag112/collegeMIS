@@ -16,9 +16,7 @@ import ScrollTop from '../ScrollTop'
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
+    marginBottom:'5px'
   },
   title: {
     display: 'none',
@@ -97,7 +95,7 @@ export default function PrimarySearchAppBar(props) {
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-    >
+    >     
       <MenuItem>
         <IconButton aria-label="show 4 new mails" color="rgb(76, 124, 120)">
           <Badge badgeContent={1} color="secondary">

@@ -8,39 +8,44 @@ import Special from './components/todays'
 import "./App.css";
 import Header from './components/header'
 import Wallpaper from './components/wallpaper'
+import { Grid } from '@material-ui/core'
 export default class App extends React.Component {
-  constructor(props)
-  {
+  constructor(props) {
     super(props);
-    if(!localStorage.getItem('auth-token'))
-    {
-     // this.props.history.push('/login')
+    if (!localStorage.getItem('auth-token')) {
+      // this.props.history.push('/login')
     }
   }
   state = {
-    date: new Date(),
-    login:false
+    date: new Date()
   };
-  login=()=>
-  {
-    this.setState({login:true},console.log(this.state.login))
-  }
+
   onChange = date => this.setState({ date });
 
   render() {
-    return (   
-      <Fragment>
-        <Header/>
-        <div className="App">
+    return (
+      <div className="App">
+        <Header />
+        <Grid container direction="row" >
+          <Grid item xs> 
           <Sidebar />
-          <Wallpaper/>
-          <Calendar className="calendar" onChange={this.onChange} value={this.state.date}/>
-         <Timetable/>
-         <UpcomAssign/>
-         <Special/>
-         </div>
-        <Messenger/>
-      </Fragment>
+          </Grid>
+          <Grid item xs={10} direction="row">
+            <Wallpaper />
+            <Grid container direction="row">
+               <Grid item xs={7}>
+                 <Timetable />
+                 <Special />
+               </Grid>
+              <Grid item xs={5}> 
+                <Calendar onChange={this.onChange} value={this.state.date} />
+                <UpcomAssign />
+              </Grid>
+            </Grid>
+          </Grid>                 
+        </Grid>
+        <Messenger />
+      </div>
     );
   }
 }

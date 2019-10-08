@@ -1,9 +1,7 @@
 .wallpaper
 {
-  grid-column-start: 3;
-  grid-column-end: 13;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  margin-left:5px !important;
+  margin-bottom: 5px !important;
 }
 .wallpaper .image
 {

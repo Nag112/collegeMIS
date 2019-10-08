@@ -1,12 +1,7 @@
 .sidebar
-{
-    margin-right:5px;
-    min-height:95vh;
+{    
+    height:100% !important;
     background-color: white;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 13;
 }
 .sidebar h5
 {

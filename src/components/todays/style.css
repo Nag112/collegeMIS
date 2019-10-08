@@ -1,9 +1,6 @@
 .special
 {
     background-color: white;
-    grid-column-start: 3;
-    grid-column-end: 9;
-    grid-row-start: 10;
-    grid-row-end: 13;
+    margin-left:5px !important;     
     padding:20px 25px;
 }
