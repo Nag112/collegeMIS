@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import Header from "../header";
 import Sidebar from "../Sidebar";
 import Wallpaper from "../wallpaper";
-import { Grid, Paper, Tabs, Tab ,Box} from "@material-ui/core";
+import { Grid, Paper, Tabs, Tab } from "@material-ui/core";
 import VerTabs from '../verTabs'
 
 export default class Profile extends Component {

@@ -10,7 +10,8 @@ class Login extends Component {
                 userid:'123456789',
                 password:'' ,
                 error:'',
-                user:false,               
+                user:false,
+                load:false               
         }
     }
     valueChange =(e)=>
@@ -19,7 +20,8 @@ class Login extends Component {
     }
     verifyUser = (e)=>
     {
-        e.preventDefault();               
+        e.preventDefault();  
+        this.setState({load:true})             
        if(this.state.userid!==''&&this.state.password!=='')
        {
            axios.post('https://misback.herokuapp.com/verifyuser/',
@@ -28,13 +30,13 @@ class Login extends Component {
        {
          if(res.data===null||res.data===undefined)
           {
-            this.setState({error:"* Userid/Password is incorrect"});
+            this.setState({error:"* Userid/Password is incorrect",load:false   });
            }
          else
            {                                     
             if(res.data.designation===undefined||res.data.designation===null)
             {
-              this.setState({error:"* Userid/Password is incorrect"});
+              this.setState({error:"* Userid/Password is incorrect",load:false   });
             }
             else
             {
@@ -46,11 +48,11 @@ class Login extends Component {
         }
       
       )
-       .catch(err =>{this.setState({error:'caught error'});console.log(err);});
+       .catch(err =>{this.setState({error:'caught error',load:false   });console.log(err);});
       }
     
       else{
-        this.setState({error:"*Please fill the required details"});
+        this.setState({error:"*Please fill the required details",load:false});
       }
     }
   render() {
@@ -67,19 +69,19 @@ class Login extends Component {
       <div className="wrap-input">
         <input className="form-control" type="text" name="userid" placeholder="User ID" onChange={this.valueChange}/>
         </div>
-      <div className="wrap-input mb-0">
+      <div className="wrap-input mb-2">
         <input className="form-control" type="password" name="password" placeholder="Password" onChange={this.valueChange}/>
       </div>
-      <h6 className="error text-light mb-3">{this.state.error}</h6>
+      <h6 className="error text-light mx-3">{this.state.error}</h6>
       <div className="login-form-btn text-center">
-        <button className="btn btn-light">
-          Login
+        <button className="btn btn-light" disabled={this.state.load}>
+         {this.state.load?<i className="fa fa-spinner"><span>Please wait</span></i>:'Login'}
         </button>
       </div>
-      <div className="text-center p-t-90">
-        <p className="text-light">
+      <div className="text-center mt-2">
+        <a className="text-light forgotpassword" href='#'>
           Forgot Password?
-        </p>
+        </a>
       </div>
     </form>
 			</div>
