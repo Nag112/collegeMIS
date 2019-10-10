@@ -79,7 +79,7 @@ class Login extends Component {
         </button>
       </div>
       <div className="text-center mt-2">
-        <a className="text-light forgotpassword" href='#'>
+        <a className="text-light forgotpassword" href='/'>
           Forgot Password?
         </a>
       </div>
