@@ -293,9 +293,7 @@ export default class Attendance extends React.Component {
     }
   }
   render() {
-    return this.state.isLoading ? (
-      <div></div>
-    ) : (
+    return  (
         <div className="attendance">
         <Header {...this.props}/>
         <Grid container spacing={1}>
