@@ -1,21 +1,24 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import axios from 'axios'
 import {Grid} from '@material-ui/core'
 import Header from '../header';
 import Sidebar from "../Sidebar";
 export default class Events extends React.Component
 {
-  verifyEvent()
-  {
-axios.post().then().catch();
-  }
+    state={
+        options:[]
+    }
+    componentDidMount()
+    {
+        axios.get('https://misback.herokuapp.com/events/get').then((res)=>this.setState({options:res.data})).catch(err=>console.log(err))
+    }
     render()
     {
-        return <Fragment>
+        return <div className="events">
            <Header {...this.props}/>
         <Grid container spacing={1}>
           <Grid item xs={2} ><Sidebar/></Grid>
-              <Grid item xs={10} className="perGrid">
+              <Grid item xs={10} className="perGrid" ml={5}>
               <div className="event-container">
     <form className="event-form" onSubmit={this.verifyEvent}>
   <span className="title text-center ">
@@ -23,9 +26,7 @@ axios.post().then().catch();
   </span>
   <select name="events" className="custom-select-sm">
   <option selected>Please select an option</option>
-  <option value="one">Freshers</option>
-  <option value="Two">TS kala vedika</option>
-  <option value="Three">College dance competion</option>
+ {this.state.options.map(opt=><option>{opt.name}</option>)}
 </select>
   <div className="custom-file">
   <input type="file" className="custom-file-input text-dark bg-dark" id="customFile"/>
@@ -41,7 +42,7 @@ axios.post().then().catch();
   </div>
 </Grid>
 </Grid>
-</Fragment>
+</div>
 
     }
 }
