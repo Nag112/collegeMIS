@@ -19,6 +19,7 @@ export default class Wallpaper extends Component
           this.setState({ error: 'caught error' });
           console.log(err);
           if (err.response.status === 403) {
+            this.history.push('/')
           }
           else {
             if (err.response.status === 500) {
