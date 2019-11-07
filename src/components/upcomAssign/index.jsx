@@ -13,10 +13,10 @@ export default class UpcomAssign extends Component
         Assignment No. :{2}
         </div>
         <div className="card-body py-0 text-center">
-          Wireless Network
+          SPPM
         </div>
         <div className="card-footer text-danger">
-          Deadline:{'10-10-2019'}
+          Deadline:{'10-11-2019'}
         </div>
         </div>
         <div className="card mb-1">
@@ -24,10 +24,10 @@ export default class UpcomAssign extends Component
         Assignment No. :{1}
         </div>
         <div className="card-body py-0 text-center">
-          AOS
+          DM
         </div>
         <div className="card-footer text-danger">
-          Deadline:{'15-10-2019'}
+          Deadline:{'15-11-2019'}
         </div>
         </div>
         </div>

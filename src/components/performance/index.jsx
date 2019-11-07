@@ -1,8 +1,6 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
-import Header from '../header';
 import "./style.css";
-import Sidebar from "../Sidebar";
 import {Grid} from '@material-ui/core'
 // const options = {
 //     elements: {
@@ -83,11 +81,8 @@ export default class Performance extends React.Component
     render()
     {
         return(
-            <div className="performance">
-             <Header {...this.props}/>
-        <Grid container spacing={1}>
-          <Grid item xs={2}>  <Sidebar/></Grid>
-              <Grid item xs={10} className="perGrid">
+            <div className="performance">       
+              <Grid item className="perGrid">
             <h2 className="text-center mt-3"><u>Performance</u></h2>
                     <table className="table my-2 table-bordered">
   <thead className="thead-dark">
@@ -124,7 +119,7 @@ export default class Performance extends React.Component
 </table>
 <Line data={this.state.donData} /> 
 </Grid>
-        </Grid>
+
             </div>
         )
     }

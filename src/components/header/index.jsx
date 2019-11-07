@@ -64,6 +64,7 @@ export default function Header(props) {
   };
   const logOut = e=> {
     localStorage.clear();
+    console.log('loggefour')
     props.history.push('/');
   }
   const handleMobileMenuOpen = event => {
