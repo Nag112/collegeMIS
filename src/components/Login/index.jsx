@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import './style.css';
 import axios from 'axios';
-import Logo from '../../assets/clg.jpg'
 class Login extends Component {
     constructor(props)
     {
@@ -64,7 +63,7 @@ class Login extends Component {
         <h3><u>Log in</u></h3>
       </span>
       <span className="login-form-logo mt-3 mb-3">
-        <img className="img-circle" src={Logo} alt="logo"/>
+        <img className="img-circle" src={`${window.location.origin}/assets/clg.jpg`} alt="logo"/>
       </span>
       <div className="wrap-input">
         <input className="form-control" type="text" name="userid" placeholder="User ID" onChange={this.valueChange}/>
