@@ -41,6 +41,7 @@ class Login extends Component {
             {
             localStorage.setItem('auth-token',res.data.token);
             localStorage.setItem('uid',res.data.uid);
+            localStorage.setItem('designation',res.data.designation)
             this.props.history.push('/timeline')
             }
            }

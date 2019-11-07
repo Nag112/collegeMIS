@@ -14,7 +14,7 @@ axios.post().then().catch();
         return <Fragment>
            <Header {...this.props}/>
         <Grid container spacing={1}>
-          <Grid item xs={2}>  <Sidebar/></Grid>
+          <Grid item xs={2} ><Sidebar/></Grid>
               <Grid item xs={10} className="perGrid">
               <div className="event-container">
     <form className="event-form" onSubmit={this.verifyEvent}>

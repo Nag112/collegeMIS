@@ -35,7 +35,7 @@ handleScroll=e=>
     return (
       <div className="App" onScroll={this.handleScroll}>  
       <Header {...this.props}/>
-      <Grid container direction="row">
+      <Grid container direction="row" spacing={1}>
         <Grid item xs={2}><Sidebar/></Grid>
              <Grid item xs={10}>
                 <Wallpaper />
