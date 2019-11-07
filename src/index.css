@@ -55,3 +55,30 @@ a,a:hover
 {
   display: inline-block;
 }
+
+.event-container
+{
+  width:40%;
+  margin:3em auto;
+  border:1px solid rgb(168, 163, 163);
+  padding:3em 3em;
+  border-radius: 15px;
+}
+.event-container .title
+{
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom:20px;
+}
+.event-container select
+{
+  width:100%;
+  margin-bottom:2em;
+  border:1px solid rgb(209, 204, 204);
+  border-radius: 5px;
+
+}
+.event-container .button
+{
+  padding:0px 45%;
+}
