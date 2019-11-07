@@ -299,65 +299,67 @@ export default class Attendance extends React.Component {
         <Grid container spacing={1}>
           <Grid item xs={2}>  <Sidebar/></Grid>
               <Grid item xs={10} className="attendanceGrid">
-                  <div className="d-flex justify-content-around py-4">
-                    <h5><u>Total present days :</u> {this.state.total_days}</h5>
-                    <h5><u>Total working days :</u> {this.state.working_days}</h5>
-                    <h5><u>Percentage :</u> {(this.state.total_days*100 / this.state.working_days).toFixed(2)}%</h5>
-                  </div>
-                  <div className="d-flex justify-content-around">
-                    <h2 onClick={this.prevMonth} className="fa fa-angle-double-left">
-                      &nbsp;
-                    </h2>
-                    <h2 className="att-heading">{this.state.c_month} Attendence</h2>
-                    <h2 onClick={this.nextMonth} className="fa fa-angle-double-right">
-                      &nbsp;
-                    </h2>
-                  </div>
-                  <div className="attendance_grid">
-                    {this.state.weeks.map(day => {
-                      return <h6 className="heading">{day} </h6>;
-                    })}
-                    {this.blankDate(this.getFirstday(this.state.c_month))}
-                    {this.state.days.map(date => {
-                      if (date.includes("( H")) {
-                        return <h6 className="holiday">{date.slice(0, 2)}</h6>;
-                      } else {
-                        return <h6 className="working">{date}</h6>;
-                      }
-                    })}
-                  </div>
-                  <p className="text-danger ml-5">* Red colour indicates holiday</p>
-                  <div className="row my-5">
-                    <div className="col-6 text-center">
-                      {" "}
-                      <Pie data={this.state.pieData} />
-                      <div className="row ">
-                        <h6 className="col text-center">
-                          <u>Absent:</u>{" "}
-                          <span className="text-danger">
-                            {this.state.pieData.datasets[0].data[0]}
-                          </span>
-                        </h6>
-                        
-                        <h6 className="col text-center">
-                          <u>Present:</u>{" "}
-                          <span className="text-primary">
-                            {this.state.pieData.datasets[0].data[1]}
-                          </span>
-                        </h6>
-                        <h6 className="col text-center">
-                          <u>Total:</u>{" "}
-                          <span className="text-danger">
-                            {this.state.working_days}
-                          </span>
-                        </h6>
+                 { this.state.isLoading?<div></div>:<Fragment>
+                    <div className="d-flex justify-content-around py-4">
+                      <h5><u>Total present days :</u> {this.state.total_days}</h5>
+                      <h5><u>Total working days :</u> {this.state.working_days}</h5>
+                      <h5><u>Percentage :</u> {(this.state.total_days*100 / this.state.working_days).toFixed(2)}%</h5>
+                    </div>
+                    <div className="d-flex justify-content-around">
+                      <h2 onClick={this.prevMonth} className="fa fa-angle-double-left">
+                        &nbsp;
+                      </h2>
+                      <h2 className="att-heading">{this.state.c_month} Attendence</h2>
+                      <h2 onClick={this.nextMonth} className="fa fa-angle-double-right">
+                        &nbsp;
+                      </h2>
+                    </div>
+                    <div className="attendance_grid">
+                      {this.state.weeks.map(day => {
+                        return <h6 className="heading">{day} </h6>;
+                      })}
+                      {this.blankDate(this.getFirstday(this.state.c_month))}
+                      {this.state.days.map(date => {
+                        if (date.includes("( H")) {
+                          return <h6 className="holiday">{date.slice(0, 2)}</h6>;
+                        } else {
+                          return <h6 className="working">{date}</h6>;
+                        }
+                      })}
+                    </div>
+                    <p className="text-danger ml-5">* Red colour indicates holiday</p>
+                    <div className="row my-5">
+                      <div className="col-6 text-center">
+                        {" "}
+                        <Pie data={this.state.pieData} />
+                        <div className="row ">
+                          <h6 className="col text-center">
+                            <u>Absent:</u>{" "}
+                            <span className="text-danger">
+                              {this.state.pieData.datasets[0].data[0]}
+                            </span>
+                          </h6>
+                          
+                          <h6 className="col text-center">
+                            <u>Present:</u>{" "}
+                            <span className="text-primary">
+                              {this.state.pieData.datasets[0].data[1]}
+                            </span>
+                          </h6>
+                          <h6 className="col text-center">
+                            <u>Total:</u>{" "}
+                            <span className="text-danger">
+                              {this.state.working_days}
+                            </span>
+                          </h6>
+                        </div>
+                      </div>
+                      <div className="col-6 text-center">
+                        {" "}
+                        <Line data={this.state.donData} />
                       </div>
                     </div>
-                    <div className="col-6 text-center">
-                      {" "}
-                      <Line data={this.state.donData} />
-                    </div>
-                  </div>
+                  </Fragment>}
               </Grid>
         </Grid>
         </div>

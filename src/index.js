@@ -1,9 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from './App'
 import "./index.css";
-import {BrowserRouter as Router} from "react-router-dom";
+import App from "./App";
+import Profile from './components/profile'
+import Attendance from './components/Attendance'
+import Performance from './components/performance'
+import { BrowserRouter as Router, Switch,Route,Redirect } from "react-router-dom";
+import Login from './components/Login'
 ReactDOM.render(
-  <Router><App/></Router>,
+  <Router>
+    <Switch>           
+      <Route exact path="/login" component={Login}/>
+      <Route exact path="/timeline" component={App} />
+      <Route exact path="/profile" component={Profile}/>
+      <Route exact path="/attendance" component={Attendance}/>
+      <Route exact path="/performance" component={Performance}/>
+      <Redirect from="*" to='/timeline'/>
+    </Switch>
+  </Router>,
   document.getElementById("root")
 );

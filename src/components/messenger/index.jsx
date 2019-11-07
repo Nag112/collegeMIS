@@ -74,7 +74,7 @@ export default class Messenger extends Component
             teamName: "Group chat",
             imageUrl: { Logo }
           }}
-          newMessagesCount={10}
+          newMessagesCount={1}
           onMessageWasSent={this._onMessageWasSent.bind(this)}
           messageList={this.state.messageList}
           showEmoji

@@ -13,7 +13,15 @@ export default class Profile extends Component {
     this.setState({ tab: newValue });
   };
   render() {
-    return <div className="App">      
+    return (
+      <Fragment>
+        <Header {...this.props}/>
+        <div className="App">
+          <Grid container direction="row" alignItems="stretch">
+            <Grid item xs>
+              <Sidebar />
+            </Grid>
+            <Grid item xs={10}>
               <Wallpaper />
               <Grid container>
                 <Grid item xs={12}>
@@ -33,7 +41,11 @@ export default class Profile extends Component {
                   </Paper>
                   <VerTabs value={this.state.tab}/>
                 </Grid>
-              </Grid>       
+              </Grid>
+            </Grid>
+          </Grid>
         </div>
+      </Fragment>
+    );
   }
 }
