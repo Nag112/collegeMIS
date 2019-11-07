@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Logo from "../../assets/img.jpg"
 import './style.css'
 import axios from 'axios'
 export default class Wallpaper extends Component
@@ -36,7 +35,7 @@ export default class Wallpaper extends Component
         return <div className="wallpaper">
         <div className="image"></div>
         <div className="text d-flex">
-          <img src={`${window.location.origin}/assets/img.jpg`} alt='pic'/>
+          <img src={`${window.location.origin}/assets/${user.cid}.jpg`} alt='pic'/>
           <ul className="list d-flex">
             <li>
               <h6>{user.name}</h6>
