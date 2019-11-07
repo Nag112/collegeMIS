@@ -10,7 +10,7 @@ export default class Attendance extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      c_month: "September 19",
+      c_month: "November 19",
       total_days: "",
       working_days:"",
       days: [],
