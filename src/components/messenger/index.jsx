@@ -26,7 +26,8 @@ export default class Messenger extends Component
     {
       let uid = localStorage.getItem('uid');
       axios.get('https://misback.herokuapp.com/chat/get',{headers:{uid:uid}}).then((res)=>{
-      let msgs =  res.data.map(temp=>{            
+      let msgs =  res.data.map(temp=>{    
+        console.log(temp)        
           if(temp.author===localStorage.getItem('uid'))
           {
               return {

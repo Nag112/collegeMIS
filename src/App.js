@@ -49,7 +49,7 @@ handleScroll=e=>
                     <UpcomAssign />
                   </Grid>
                 </Grid>
-            <Messenger />
+            <Messenger /> 
              </Grid>
       </Grid>
         {this.state.scroll && <ScrollTop/> }
