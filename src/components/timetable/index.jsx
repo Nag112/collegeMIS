@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
-import './timetable.css'
-export default class Timetable extends Component
-{
-
-    render()
-    {
-        return  <div className="timeline">
+import React, { Component } from "react";
+import "./timetable.css";
+export default class Timetable extends Component {
+  render() {
+    return (
+      <div className="timeline">
         <h5>Class Time table</h5>
         <hr />
         <div className="timetable row">
@@ -15,87 +13,77 @@ export default class Timetable extends Component
           </div>
           <div className="col-3 time">
             <div className="mb-3 ">
-              <h6>09:20</h6>
-              <h6>10:20</h6>
+              <h6>09:00</h6>
+              <h6>10:00</h6>
             </div>
             <div className="mb-3">
-              <h6>10:20</h6>
+              <h6>10:00</h6>
               <h6>11:00</h6>
             </div>
             <div className="mb-3">
-              <h6>11:20</h6>
-              <h6>12:10</h6>
+              <h6>11:00</h6>
+              <h6>12:00</h6>
             </div>
             <div className="mb-3">
-              <h6>12:10</h6>
+              <h6>12:00</h6>
               <h6>13:00</h6>
             </div>
             <div className="mb-3">
-              <h6>13:45</h6>
-              <h6>14:30</h6>
+              <h6>14:00</h6>
+              <h6>15:00</h6>
             </div>
             <div className="mb-3">
-              <h6>14:30</h6>
-              <h6>15:35</h6>
-            </div>
-            <div className="mb-3">
-              <h6>15:35</h6>
-              <h6>16:00</h6>
+              <h6>15:00</h6>
+              <h6>17:00</h6>
             </div>
           </div>
           <div className="col-6">
             <div className="course d-flex justify-content-between">
               <div>
-                <h6>SPPM</h6>
-                <p>Roomno. 204</p>
+                <h6>AA</h6>
+                <p>Roomno. 2D</p>
               </div>
-              <p>Mr.L.Manikandan</p>
+              <p>Dr. B R Purushothama</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
-                <h6>PPL</h6>
-                <p>Roomno. 204</p>
+                <h6>Graph Theory</h6>
+                <p>Roomno. 2D</p>
               </div>
-              <p>Dr.M.Ramasubramanian</p>
+              <p>Dr.S.Mini</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
                 <h6>DM</h6>
-                <p>Roomno. 204</p>
+                <p>Roomno. N4</p>
               </div>
-              <p>Mr.K.C.Ravikumar</p>
+              <p>Dr.E.Damodar</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
-              <h6>PPL</h6>
-                <p>Roomno. 204</p>
+                <h6>Soft Computing</h6>
+                <p>Roomno. 2D</p>
               </div>
-              <p>Dr.M.Ramasubramanian</p>
+              <p>Dr.Venkat Naresh Babu</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
-                <h6>IOT</h6>
-                <p>Roomno. 204</p>
+                <h6>Network Security</h6>
+                <p>Roomno. 2D</p>
               </div>
-              <p>Ms.K.Laksmi Sravani</p>
+              <p>Dr.Cirag Modi</p>
             </div>
             <div className="course d-flex justify-content-between">
               <div>
-              <h6>DM</h6>
-                <p>Roomno. 204</p>
+                <h6>Major Project</h6>
+                <p>Roomno. 2D</p>
               </div>
-              <p>Mr.K.C.Ravikumar</p>
-            </div>
-            <div className="course d-flex justify-content-between">
-              <div>
-                <h6>CC</h6>
-                <p>Roomno. 204</p>
-              </div>
-              <p>Dr.T.K.S.Ratish Babu</p>
+              <p>Dr.Keshavamurthy.B.N</p>
             </div>
           </div>
         </div>
         <hr />
       </div>
-    }
+    );
+  }
 }
