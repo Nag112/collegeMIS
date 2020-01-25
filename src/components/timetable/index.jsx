@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./timetable.css";
 export default class Timetable extends Component {
+  state = {
+    date: new Date()
+  };
   render() {
     return (
       <div className="timeline">
@@ -9,7 +12,7 @@ export default class Timetable extends Component {
         <div className="timetable row">
           <div className="col-3">
             <h5>Today</h5>
-            <h6>07 November 2019</h6>
+            <h6>{this.state.date}</h6>
           </div>
           <div className="col-3 time">
             <div className="mb-3 ">
