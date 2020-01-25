@@ -12,7 +12,14 @@ export default class Timetable extends Component {
         <div className="timetable row">
           <div className="col-3">
             <h5>Today</h5>
-            <h6>{this.state.date}</h6>
+            <h6>
+              {this.state.date.getDate() +
+                "-" +
+                this.state.date.getMonth() +
+                1 +
+                "-" +
+                this.state.date.getFullYear()}
+            </h6>
           </div>
           <div className="col-3 time">
             <div className="mb-3 ">

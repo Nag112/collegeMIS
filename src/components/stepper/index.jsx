@@ -36,7 +36,7 @@ function getStepContent(step) {
       return `Details regarding Btech III year`;
     case 3:
         return `You are in the final year B.Tech,
-        Your is CGA:8.85`
+        Your is CGA:6.5`
     default:
       return 'Unknown step';
   }
