@@ -4,6 +4,7 @@ import "./style.css";
 export default class Wallpaper extends Component {
   render() {
     const { user } = this.props;
+    console.log(user);
     return (
       <div className="wallpaper">
         <div className="image"></div>

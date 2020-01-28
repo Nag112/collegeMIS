@@ -12,12 +12,11 @@ import Sidebar from "./components/Sidebar";
 import Header from './components/header';
 import axios from 'axios'
 export default class Timeline extends React.Component {
-  state={
-    user:{},
-    error:{}
-  };
   constructor(props) {
     super(props);
+    this.state={
+      user:{}
+    }
     if (!localStorage.getItem('auth-token')) {
        this.props.history.push('/login')
     }
@@ -25,7 +24,8 @@ export default class Timeline extends React.Component {
     if (token) {
       axios.get('https://misback.herokuapp.com/fetchstudent', { headers: { token: token } })
         .then((res) => {
-          this.setState({ user: res.data, isLoading: false });        
+          console.log(res.data,'res.data')
+          this.setState({ user: res.data },console.log(this.state.user,'naxy'));        
         })
         .catch(err => {
           this.setState({ error: 'caught error' });
