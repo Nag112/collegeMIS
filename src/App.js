@@ -24,8 +24,7 @@ export default class Timeline extends React.Component {
     if (token) {
       axios.get('https://misback.herokuapp.com/fetchstudent', { headers: { token: token } })
         .then((res) => {
-          console.log(res.data,'res.data')
-          this.setState({ user: res.data },console.log(this.state.user,'naxy'));        
+          this.setState({ user: res.data });        
         })
         .catch(err => {
           this.setState({ error: 'caught error' });
@@ -46,16 +45,7 @@ export default class Timeline extends React.Component {
     date: new Date(),
     scroll:true
   };
-
   onChange = date => this.setState({ date });
-handleScroll=e=>
-{
-  //console.log("NagC")
-  if(e.target.scrollHeight>10)
-  {
-    //console.log("NagC")
-  }
-}
   render() {
     return (
       <div className="App" onScroll={this.handleScroll}>  

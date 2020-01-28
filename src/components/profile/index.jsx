@@ -4,11 +4,37 @@ import Sidebar from "../Sidebar";
 import Wallpaper from "../wallpaper";
 import { Grid, Paper, Tabs, Tab } from "@material-ui/core";
 import VerTabs from '../verTabs'
-
+import axios from 'axios'
 export default class Profile extends Component {
-  state = {
-    tab: 0
-  };
+  constructor(props) {
+    super(props);
+    this.state={
+      user:{},
+      tab: 0
+    }
+    if (!localStorage.getItem('auth-token')) {
+       this.props.history.push('/login')
+    }
+    let token = localStorage.getItem('auth-token');
+    if (token) {
+      axios.get('https://misback.herokuapp.com/fetchstudent', { headers: { token: token } })
+        .then((res) => {
+          this.setState({ user: res.data });        
+        })
+        .catch(err => {
+          this.setState({ error: 'caught error' });
+          console.log(err);
+          if (err.response.status === 403) {
+            this.history.push('/')
+          }
+          else {
+            if (err.response.status === 500) {
+              this.setState({ user: "an error occured please try again after sometime" })
+            }
+          }
+        });
+      }
+  }
   handleChange = (e, newValue) => {
     this.setState({ tab: newValue });
   };
@@ -22,7 +48,7 @@ export default class Profile extends Component {
               <Sidebar />
             </Grid>
             <Grid item xs={10}>
-              <Wallpaper />
+            <Wallpaper user={this.state.user}/>
               <Grid container>
                 <Grid item xs={12}>
                   <Paper style={{borderRadius:0,borderBottom:'1px solid gray',marginLeft:'5px'}}>
