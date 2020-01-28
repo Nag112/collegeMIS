@@ -10,13 +10,38 @@ import { Grid } from '@material-ui/core'
 import ScrollTop from './components/ScrollTop'
 import Sidebar from "./components/Sidebar";
 import Header from './components/header';
+import axios from 'axios'
 export default class Timeline extends React.Component {
+  state={
+    user:{},
+    error:{}
+  };
   constructor(props) {
     super(props);
     if (!localStorage.getItem('auth-token')) {
        this.props.history.push('/login')
     }
+    let token = localStorage.getItem('auth-token');
+    if (token) {
+      axios.get('https://misback.herokuapp.com/fetchstudent', { headers: { token: token } })
+        .then((res) => {
+          this.setState({ user: res.data, isLoading: false });        
+        })
+        .catch(err => {
+          this.setState({ error: 'caught error' });
+          console.log(err);
+          if (err.response.status === 403) {
+            this.history.push('/')
+          }
+          else {
+            if (err.response.status === 500) {
+              this.setState({ user: "an error occured please try again after sometime" })
+            }
+          }
+        });
+      }
   }
+  
   state = {
     date: new Date(),
     scroll:true
@@ -38,7 +63,7 @@ handleScroll=e=>
       <Grid container direction="row" spacing={1}>
         <Grid item xs={2}><Sidebar/></Grid>
              <Grid item xs={10}>
-                <Wallpaper />
+                <Wallpaper user={this.state.user}/>
                 <Grid container direction="row">
                    <Grid item xs={7}>
                      <Timetable />
