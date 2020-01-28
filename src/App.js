@@ -30,7 +30,7 @@ export default class Timeline extends React.Component {
           this.setState({ error: 'caught error' });
           console.log(err);
           if (err.response.status === 403) {
-            this.history.push('/')
+            this.props.history.push('/')
           }
           else {
             if (err.response.status === 500) {

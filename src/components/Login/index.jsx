@@ -7,7 +7,7 @@ class Login extends Component {
     this.state = {
       userid: "123456789",
       password: "",
-      error: 'Please enter 123456789 for id and "password" for password',
+      error: 'Please enter 16CSE1010 for id and "password" for password',
       user: false,
       load: false
     };

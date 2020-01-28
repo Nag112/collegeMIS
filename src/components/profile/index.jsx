@@ -3,37 +3,41 @@ import Header from "../header";
 import Sidebar from "../Sidebar";
 import Wallpaper from "../wallpaper";
 import { Grid, Paper, Tabs, Tab } from "@material-ui/core";
-import VerTabs from '../verTabs'
-import axios from 'axios'
+import VerTabs from "../verTabs";
+import axios from "axios";
 export default class Profile extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      user:{},
+    this.state = {
+      user: {},
       tab: 0
+    };
+    if (!localStorage.getItem("auth-token")) {
+      this.props.history.push("/login");
     }
-    if (!localStorage.getItem('auth-token')) {
-       this.props.history.push('/login')
-    }
-    let token = localStorage.getItem('auth-token');
+    let token = localStorage.getItem("auth-token");
     if (token) {
-      axios.get('https://misback.herokuapp.com/fetchstudent', { headers: { token: token } })
-        .then((res) => {
-          this.setState({ user: res.data });        
+      axios
+        .get("https://misback.herokuapp.com/fetchstudent", {
+          headers: { token: token }
+        })
+        .then(res => {
+          this.setState({ user: res.data });
         })
         .catch(err => {
-          this.setState({ error: 'caught error' });
+          this.setState({ error: "caught error" });
           console.log(err);
           if (err.response.status === 403) {
-            this.history.push('/')
-          }
-          else {
+            this.props.history.push("/");
+          } else {
             if (err.response.status === 500) {
-              this.setState({ user: "an error occured please try again after sometime" })
+              this.setState({
+                user: "an error occured please try again after sometime"
+              });
             }
           }
         });
-      }
+    }
   }
   handleChange = (e, newValue) => {
     this.setState({ tab: newValue });
@@ -41,17 +45,23 @@ export default class Profile extends Component {
   render() {
     return (
       <Fragment>
-        <Header {...this.props}/>
+        <Header {...this.props} />
         <div className="App">
           <Grid container direction="row" alignItems="stretch">
             <Grid item xs>
               <Sidebar />
             </Grid>
             <Grid item xs={10}>
-            <Wallpaper user={this.state.user}/>
+              <Wallpaper user={this.state.user} />
               <Grid container>
                 <Grid item xs={12}>
-                  <Paper style={{borderRadius:0,borderBottom:'1px solid gray',marginLeft:'5px'}}>
+                  <Paper
+                    style={{
+                      borderRadius: 0,
+                      borderBottom: "1px solid gray",
+                      marginLeft: "5px"
+                    }}
+                  >
                     <Tabs
                       value={this.state.tab}
                       indicatorColor="primary"
@@ -62,10 +72,10 @@ export default class Profile extends Component {
                     >
                       <Tab label="Personal" />
                       <Tab label="contact" />
-                      <Tab label="education" />                                           
-                    </Tabs>                    
+                      <Tab label="education" />
+                    </Tabs>
                   </Paper>
-                  <VerTabs value={this.state.tab}/>
+                  <VerTabs value={this.state.tab} />
                 </Grid>
               </Grid>
             </Grid>
