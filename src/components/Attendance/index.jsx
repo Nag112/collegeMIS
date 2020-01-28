@@ -194,7 +194,7 @@ export default class Attendance extends React.Component {
   }
   componentDidUpdate() {
     let token = localStorage.getItem("auth-token");
-    Axios.get("http://localhost:5000/attendance/get", {
+    Axios.get("https://misback.herokuapp.com/attendance/get", {
       headers: { token: token }
     })
       .then(res => {
@@ -248,7 +248,7 @@ export default class Attendance extends React.Component {
     }
     let token = localStorage.getItem("auth-token");
     if (token) {
-      Axios.get("http://localhost:5000/attendance/get", {
+      Axios.get("https://misback.herokuapp.com/attendance/get", {
         headers: { token: token }
       })
         .then(res => {

@@ -9,7 +9,7 @@ export default class Events extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost:5000/events/get")
+      .get("https://misback.herokuapp.com/events/get")
       .then(res => this.setState({ options: res.data }))
       .catch(err => console.log(err));
   }

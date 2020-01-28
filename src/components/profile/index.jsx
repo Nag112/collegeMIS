@@ -18,7 +18,7 @@ export default class Profile extends Component {
     let token = localStorage.getItem("auth-token");
     if (token) {
       axios
-        .get("http://localhost:5000/fetchstudent", {
+        .get("https://misback.herokuapp.com/fetchstudent", {
           headers: { token: token }
         })
         .then(res => {

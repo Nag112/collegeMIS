@@ -24,7 +24,7 @@ export default class Messenger extends Component {
   componentDidMount() {
     let uid = localStorage.getItem("uid");
     axios
-      .get("http://localhost:5000/chat/get", { headers: { uid: uid } })
+      .get("https://misback.herokuapp.com/chat/get", { headers: { uid: uid } })
       .then(res => {
         let msgs = res.data.map(temp => {
           console.log(temp);
@@ -50,7 +50,7 @@ export default class Messenger extends Component {
       messageList: [...this.state.messageList, message]
     });
     let uid = localStorage.getItem("uid");
-    axios.post("http://localhost:5000/chat/add", {
+    axios.post("https://misback.herokuapp.com/chat/add", {
       uid: uid,
       text: message.data.text
     });
