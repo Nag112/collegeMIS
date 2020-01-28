@@ -329,7 +329,7 @@ export default class Attendance extends React.Component {
                       })}
                     </div>
                     <p className="text-danger ml-5">* Red colour indicates holiday</p>
-                    <div className="row my-5">
+                    <div className="row my-5 bg-white">
                       <div className="col-6 text-center">
                         {" "}
                         <Pie data={this.state.pieData} />
